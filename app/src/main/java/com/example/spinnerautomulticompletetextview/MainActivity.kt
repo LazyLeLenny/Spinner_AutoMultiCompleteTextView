@@ -95,6 +95,11 @@ class MainActivity : AppCompatActivity() {
             lastNameET.text.clear()
             ageET.text.clear()
         }
+
+        workerListLV.onItemClickListener = AdapterView.OnItemClickListener { parent, v, position, id ->
+            val worker = listViewAdapter.getItem(position)
+            listViewAdapter.remove(worker)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
